@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Franziska Bolte</title>
-<meta name="description" content="Franziska Bolte — M.A. Social Sciences, Humboldt-Universität zu Berlin. Political sociology, historical political economy, comparative politics.">
+<meta name="description" content="Franziska Bolte — MA Social Sciences, Humboldt-Universität zu Berlin. Political sociology, historical political economy, comparative politics.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -39,10 +39,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Language switching: show only the active language */
-html[data-lang="de"] [lang="en"],
-html[data-lang="en"] [lang="de"] { display: none !important; }
-
 :focus-visible { outline: 2px solid var(--accent-mid); outline-offset: 3px; }
 
 p { margin: 0 0 1em; }
@@ -54,13 +50,7 @@ p { margin: 0 0 1em; }
   padding: 2rem 1.5rem 3rem;
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 3.5rem;
-}
+.topbar { margin-bottom: 3.5rem; }
 
 /* Name: a plain, quiet heading */
 .name {
@@ -71,31 +61,6 @@ p { margin: 0 0 1em; }
   line-height: 1.2;
   margin: 0;
   color: var(--accent-dark);
-}
-
-.lang-switch {
-  display: inline-flex;
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  border: 1px solid var(--accent-pale);
-  border-radius: 2px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.lang-switch button {
-  font: inherit;
-  background: transparent;
-  color: var(--ink-soft);
-  border: 0;
-  padding: 0.35rem 0.75rem;
-  cursor: pointer;
-  letter-spacing: 0.06em;
-}
-.lang-switch button + button { border-left: 1px solid var(--accent-pale); }
-.lang-switch button:hover { background: var(--accent-wash); }
-.lang-switch button[aria-pressed="true"] {
-  background: var(--accent-dark);
-  color: var(--bg);
 }
 
 section { margin-bottom: 3.5rem; }
@@ -128,69 +93,7 @@ h2 {
 }
 
 /* ---------- About ---------- */
-.about p { color: var(--ink); max-width: 62ch; margin-bottom: 0; }
-
-/* ---------- CV + Education entries ---------- */
-.entry {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 1.2rem;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--accent-pale);
-}
-.entry:first-of-type { border-top: 1px solid var(--accent-pale); }
-
-.entry-meta { padding-top: 0.15rem; }
-.date {
-  display: block;
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--accent-mid);
-}
-.where {
-  display: block;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--ink-faint);
-  margin-top: 0.15rem;
-}
-
-.role { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 0 0 0.1rem; }
-.org  { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 0.5rem; }
-
-.bullets { list-style: none; margin: 0; padding: 0; }
-.bullets li {
-  position: relative;
-  padding-left: 1rem;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-  margin-bottom: 0.2rem;
-}
-.bullets li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  color: var(--accent-mid);
-}
-
-.skills {
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  color: var(--accent-dark);
-  margin: 0.5rem 0 0;
-}
-
-.sub-label {
-  display: block;
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent-mid);
-  margin: 0.9rem 0 0.3rem;
-}
-.entry-note { color: var(--ink-soft); font-size: 0.92rem; margin: 0.3rem 0 0; }
-.paper-title { font-style: italic; }
+.about p { max-width: 62ch; margin-bottom: 0; }
 
 /* ---------- Link buttons ---------- */
 .links { display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; }
@@ -234,17 +137,70 @@ h2 {
   border: 0;
 }
 
-@media (prefers-reduced-motion: reduce) { .btn, .icon-link { transition: none; } }
+/* ---------- CV + Education entries ---------- */
+.entry {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--accent-pale);
+}
+.entry:first-of-type { border-top: 1px solid var(--accent-pale); }
+
+.date {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent-mid);
+  padding-top: 0.15rem;
+}
+
+.role { font-family: var(--sans); font-size: 1rem; font-weight: 600; margin: 0 0 0.1rem; }
+.org  { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+
+.bullets { list-style: none; margin: 0; padding: 0; }
+.bullets li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin-bottom: 0.2rem;
+}
+.bullets li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--accent-mid);
+}
+
+.skills {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--accent-dark);
+  margin: 0.5rem 0 0;
+}
+
+.sub-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-mid);
+  margin: 0.9rem 0 0.3rem;
+}
+.entry-note { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+.paper-title { font-style: italic; }
 
 footer { padding-top: 1.5rem; border-top: 1px solid var(--accent-pale); }
 .meta { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-faint); }
 
+@media (prefers-reduced-motion: reduce) { .btn, .icon-link { transition: none; } }
+
 @media (max-width: 600px) {
   .page { padding: 1.25rem 1.25rem 2rem; }
   .topbar { margin-bottom: 2.5rem; }
-  .entry { grid-template-columns: 1fr; gap: 0.5rem; }
-  .entry-meta { display: flex; gap: 0.8rem; align-items: baseline; padding-top: 0; }
-  .where { margin-top: 0; }
+  .entry { grid-template-columns: 1fr; gap: 0.3rem; }
+  .date { padding-top: 0; }
 }
 </style>
 </head>
@@ -253,27 +209,14 @@ footer { padding-top: 1.5rem; border-top: 1px solid var(--accent-pale); }
 
   <header class="topbar">
     <h1 class="name">Franziska Bolte</h1>
-    <div class="lang-switch" role="group" aria-label="Sprache / Language">
-      <button type="button" data-set-lang="de" aria-pressed="true">DE</button>
-      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
-    </div>
   </header>
 
-  <!-- Über mich / About -->
+  <!-- About -->
   <section class="s1 about" id="about">
     <div class="thread">
-      <h2><span lang="de">Über mich</span><span lang="en">About</span></h2>
+      <h2>About Me</h2>
     </div>
-    <p lang="de">
-      Ich absolviere derzeit meinen M.A. in Sozialwissenschaften an der
-      Humboldt-Universität zu Berlin. Meine Forschungsinteressen liegen in der
-      Politischen Soziologie, der historischen politischen Ökonomie und der
-      Vergleichenden Politikwissenschaft. In meiner Masterarbeit befasse ich mich
-      mit der möglichen Übertragung des CARIN-Frameworks (van Oorschot, 2000) der
-      Deservingness-Kriterien des Wohlfahrtsstaats auf die Deservingness sozialer
-      und demokratischer Rechte im heutigen Deutschland.
-    </p>
-    <p lang="en">
+    <p>
       I am currently doing my M.A. in social sciences at Humboldt-Universität zu
       Berlin. My research interests lie in political sociology, historical
       political economy and comparative politics. I am writing my master's thesis
@@ -285,7 +228,7 @@ footer { padding-top: 1.5rem; border-top: 1px solid var(--accent-pale); }
     <div class="links">
       <a class="icon-link" href="mailto:vorname.nachname@example.com">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>
-        <span class="sr-only"><span lang="de">E-Mail</span><span lang="en">Email</span></span>
+        <span class="sr-only">Email</span>
       </a>
       <a class="btn" href="https://www.linkedin.com/in/franziska-bolte/" target="_blank" rel="noopener">
         LinkedIn <span aria-hidden="true">↗</span>
@@ -300,159 +243,80 @@ footer { padding-top: 1.5rem; border-top: 1px solid var(--accent-pale); }
     </div>
 
     <article class="entry">
-      <div class="entry-meta">
-        <span class="date"><span lang="de">seit 10/2024</span><span lang="en">since 10/2024</span></span>
-        <span class="where">Berlin</span>
-      </div>
+      <span class="date">since 10/2024</span>
       <div>
-        <h3 class="role"><span lang="de">Studentische Hilfskraft</span><span lang="en">Student Research Assistant</span></h3>
-        <p class="org">
-          <span lang="de">Humboldt-Universität zu Berlin · Politische Soziologie und Sozialpolitik</span>
-          <span lang="en">Humboldt-Universität zu Berlin · Political Sociology and Social Policy</span>
-        </p>
-        <ul class="bullets" lang="de">
-          <li>Unterstützung bei der Erstellung des Fragebogens für den „Berlin Polarization Monitor“ in Unipark</li>
-          <li>Literaturrecherche und Organisation der Literatur in Zotero</li>
-          <li>Unterstützung der Einreichung wissenschaftlicher Publikationen</li>
-        </ul>
-        <ul class="bullets" lang="en">
-          <li>Supporting the development of the questionnaire for the “Berlin Polarization Monitor” in Unipark</li>
-          <li>Literature research and organisation of references in Zotero</li>
-          <li>Supporting the submission of scientific publications</li>
-        </ul>
+        <h3 class="role">Student Research Assistant</h3>
+        <p class="org">Humboldt-Universität zu Berlin · Political Sociology and Social Policy</p>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-meta">
-        <span class="date">04/2025 – 10/2025</span>
-        <span class="where">Berlin</span>
-      </div>
+      <span class="date">04/2025 – 10/2025</span>
       <div>
-        <h3 class="role"><span lang="de">Junior Business Development Managerin</span><span lang="en">Junior Business Development Manager</span></h3>
+        <h3 class="role">Junior Business Development Manager</h3>
         <p class="org">Travelcircus GmbH</p>
-        <ul class="bullets" lang="de">
-          <li>Bewertung der Qualität potenzieller Geschäftsabschlüsse und Vertragsverlängerungen</li>
-          <li>Planung von Angeboten für aktuelle Verkaufsaktionen und zugehörige Kampagnenverwaltung</li>
-          <li>Betreuung des Affiliate-Marketings mit Online-Tools</li>
-        </ul>
-        <ul class="bullets" lang="en">
-          <li>Assessing the quality of potential deals and contract renewals</li>
-          <li>Planning offers for current sales promotions and managing the related campaigns</li>
-          <li>Managing affiliate marketing with online tools</li>
-        </ul>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-meta">
-        <span class="date">10/2024 – 12/2024</span>
-        <span class="where"><span lang="de">Berlin · Teilzeit, befristet</span><span lang="en">Berlin · part-time, fixed-term</span></span>
-      </div>
+      <span class="date">10/2024 – 12/2024</span>
       <div>
-        <h3 class="role"><span lang="de">Junior Awards Managerin</span><span lang="en">Junior Awards Manager</span></h3>
+        <h3 class="role">Junior Awards Manager</h3>
         <p class="org">Scholz &amp; Friends Berlin</p>
-        <ul class="bullets" lang="de">
-          <li>Planung, Organisation und Einreichung von Agentur-Arbeiten bei Kreativwettbewerben</li>
-          <li>Rechnungsverwaltung und Kosten-Tracking</li>
-        </ul>
-        <ul class="bullets" lang="en">
-          <li>Planning, organising and submitting agency work to creative competitions</li>
-          <li>Invoice management and cost tracking</li>
-        </ul>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-meta">
-        <span class="date">02/2024 – 09/2024</span>
-        <span class="where">Berlin</span>
-      </div>
+      <span class="date">02/2024 – 09/2024</span>
       <div>
-        <h3 class="role"><span lang="de">Praktikantin &amp; Wissenschaftliche Hilfskraft</span><span lang="en">Intern &amp; Research Assistant</span></h3>
+        <h3 class="role">Intern &amp; Research Assistant</h3>
         <p class="org">Fraunhofer IAO · Center for Responsible Research and Innovation</p>
-        <ul class="bullets" lang="de">
-          <li>Durchführung und Systematisierung wissenschaftlicher Literaturrecherchen</li>
-          <li>Mitwirkung an der Erstellung von Texten für Förderanträge und Projektanträge</li>
-          <li>Entwicklung von Präsentationen zur Vermittlung von Projektergebnissen und -vorstellungen</li>
-          <li>Unterstützung bei der Kundenakquise und Geschäftsentwicklung</li>
-        </ul>
-        <ul class="bullets" lang="en">
-          <li>Conducting and systematising scientific literature reviews</li>
-          <li>Contributing to texts for funding and project proposals</li>
-          <li>Developing presentations to communicate project results and project ideas</li>
-          <li>Supporting client acquisition and business development</li>
-        </ul>
       </div>
     </article>
   </section>
 
-  <!-- Education / Ausbildung -->
+  <!-- Education -->
   <section class="s3" id="education">
     <div class="thread">
-      <h2><span lang="de">Ausbildung</span><span lang="en">Education</span></h2>
+      <h2>Education</h2>
     </div>
 
     <article class="entry">
-      <div class="entry-meta">
-        <span class="date">10/2025 – 05/2027</span>
-      </div>
+      <span class="date">10/2025 – 05/2027</span>
       <div>
-        <h3 class="role">Master of Arts (M.A.), Social Sciences</h3>
+        <h3 class="role">MA Social Sciences</h3>
         <p class="org">Humboldt-Universität zu Berlin</p>
-        <p class="skills"><span lang="de">Kenntnisse: R Studio</span><span lang="en">Skills: R Studio</span></p>
+        <p class="skills">Skills: R Studio</p>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-meta">
-        <span class="date">10/2021 – 09/2025</span>
-      </div>
+      <span class="date">10/2021 – 09/2025</span>
       <div>
-        <h3 class="role">Bachelor of Arts (B.A.), American Studies &amp; Social Sciences</h3>
+        <h3 class="role">BA American Studies &amp; Social Sciences</h3>
         <p class="org">Humboldt-Universität zu Berlin</p>
-        <p class="skills"><span lang="de">Kenntnisse: R Studio</span><span lang="en">Skills: R Studio</span></p>
+        <p class="skills">Skills: R Studio</p>
       </div>
     </article>
 
     <article class="entry">
-      <div class="entry-meta">
-        <span class="date">2022 – 2026</span>
-      </div>
+      <span class="date">2022 – 2026</span>
       <div>
-        <h3 class="role"><span lang="de">Ergänzungsstudium Psychologie</span><span lang="en">Supplementary Studies in Psychology</span></h3>
+        <h3 class="role">Studies in Psychology &amp; Empirical Methods</h3>
         <p class="org">IU Internationale Hochschule</p>
 
-        <p class="entry-note" lang="de">
-          Ergänzendes interdisziplinäres Studium in empirischen Forschungsmethoden,
-          quantitativer Datenanalyse und psychologischen Grundlagen, parallel zum
-          Hauptstudium Amerikanistik &amp; Sozialwissenschaften.
-        </p>
-        <p class="entry-note" lang="en">
-          Supplementary interdisciplinary studies in empirical research methods,
-          quantitative data analysis and foundational psychological concepts,
-          in parallel to my major studies in American Studies &amp; Social Sciences.
-        </p>
-
-        <span class="sub-label"><span lang="de">Relevante Kurse</span><span lang="en">Relevant coursework</span></span>
-        <ul class="bullets" lang="de">
-          <li>Einführung in die empirisch-wissenschaftliche Psychologie</li>
-          <li>Empirische Sozialforschung</li>
-          <li>Angewandte Datenanalyse</li>
-          <li>Angewandte Psychologische Diagnostik (Testtheorie &amp; Testkonstruktion)</li>
-        </ul>
-        <ul class="bullets" lang="en">
+        <span class="sub-label">Relevant coursework</span>
+        <ul class="bullets">
           <li>Introduction to Empirical-Scientific Psychology</li>
           <li>Empirical Social Research</li>
           <li>Applied Data Analysis</li>
           <li>Applied Psychological Diagnostics (Test Theory &amp; Test Construction)</li>
         </ul>
 
-        <span class="sub-label"><span lang="de">Abschlussarbeit · Note 1,3</span><span lang="en">Final research paper · Grade 1.3 (German scale)</span></span>
-        <p class="entry-note" style="margin-top:0">
+        <span class="sub-label">Final research paper · Grade 1.3 (German scale)</span>
+        <p class="entry-note">
           <span class="paper-title">“Who is protecting whom? The illusion of female security as a justification for anti-migration narratives.”</span>
-          <span lang="de">Eine Individualdatenerhebung zu femonationalistischen Einstellungen und Attributionsverzerrungen bei der Zuschreibung von Sexismus gegenüber Männern mit Migrationshintergrund.</span>
-          <span lang="en">An individual-level data collection on femonationalist attitudes and sexism attribution-biases towards men with migrant backgrounds.</span>
+          An individual-level data collection on femonationalist attitudes and sexism attribution-biases towards men with migrant backgrounds.
         </p>
       </div>
     </article>
@@ -463,32 +327,5 @@ footer { padding-top: 1.5rem; border-top: 1px solid var(--accent-pale); }
   </footer>
 
 </div>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  var buttons = document.querySelectorAll('[data-set-lang]');
-
-  function setLang(lang, persist) {
-    root.setAttribute('data-lang', lang);
-    root.setAttribute('lang', lang);
-    buttons.forEach(function (b) {
-      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === lang ? 'true' : 'false');
-    });
-    if (persist) {
-      try { localStorage.setItem('lang', lang); } catch (e) {}
-    }
-  }
-
-  var saved = null;
-  try { saved = localStorage.getItem('lang'); } catch (e) {}
-  var initial = saved || ((navigator.language || 'de').toLowerCase().indexOf('de') === 0 ? 'de' : 'en');
-  setLang(initial, false);
-
-  buttons.forEach(function (b) {
-    b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang'), true); });
-  });
-})();
-</script>
 </body>
 </html>
